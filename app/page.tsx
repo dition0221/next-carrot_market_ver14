@@ -1,17 +1,25 @@
-export default function Home() {
+import Link from "next/link";
+
+export default function HomePage() {
   return (
-    <main className="bg-slate-300 h-screen flex items-center justify-center p-5">
-      <article className="flex flex-col md:flex-row gap-2 bg-white w-full p-5 shadow-lg rounded-2xl max-w-screen-sm">
-        <input
-          type="text"
-          placeholder="Search here.."
-          className="peer/input w-full rounded-full h-10 bg-gray-200 pl-5 py-3 outline-none focus:ring ring-green-500 ring-offset-2 transition invalid:ring-red-500"
-          required
-        />
-        <button className="bg-black text-white py-2 rounded-full font-medium active:scale-90 focus:outline-none transition-transform md:px-10 peer-valid/input:bg-green-600">
-          Search
-        </button>
-      </article>
+    <main className="flex flex-col justify-between items-center min-h-screen p-6">
+      <div className="flex flex-col items-center gap-2 my-auto *:font-medium">
+        <span className="text-9xl">🥕</span>
+        <h1 className="text-4xl">Carrot-Market</h1>
+        <h2 className="text-2xl">Welcome to Carrot-Market!</h2>
+      </div>
+
+      <div className="flex flex-col items-center gap-3 w-full">
+        <Link href="/create-account" className="primary-btn text-lg py-2.5">
+          Start
+        </Link>
+        <div className="flex gap-1">
+          <span>Already have an account?</span>
+          <Link href="/login" className="hover:underline">
+            Login
+          </Link>
+        </div>
+      </div>
     </main>
   );
 }
